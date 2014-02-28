@@ -14,21 +14,42 @@
 	<body>
 		<div id="map-canvas"></div>
 		<script type="text/javascript">
+			var path =
+				[[38.8933501072404,-89.41022515296936],
+				[38.893300004672454,-89.41023722290998],
+				[38.89324572685059,-89.41022783517838],
+				[38.89324781445989,-89.40995961427694],
+				[38.89335323864974,-89.40995693206793],
+				[38.8933501072404,-89.41022515296936],
+				[38.8933501072404,-89.41022515296936]];
 			var map;
 			$(document).ready(function(){
 				map = new GMaps({
 					el: '#map-canvas',
-					lat: -12.043333,
-					lng: -77.028333,
+					lat: 38.893638,
+					lng: -89.408745,
 					zoomControl : true,
 					zoomControlOpt: {
 						style : 'SMALL',
 						position: 'TOP_LEFT'
 					},
 				panControl : false,
-				streetViewControl : false,
-				mapTypeControl: false,
-				overviewMapControl: false
+				streetViewControl : true,
+				mapTypeControl: true,
+				overviewMapControl: true
+				});
+				map.drawOverlay({
+					lat: 38.893638,
+					lng: -89.408745,
+					content: '<div class="overlay">Greenville College<div class="overlay_arrow above"></div></div>'
+				});
+				polygon = map.drawPolygon({
+					paths: path, // pre-defined polygon shape
+					strokeColor: '#BBD8E9',
+					strokeOpacity: 1,
+					strokeWeight: 3,
+					fillColor: '#BBD8E9',
+					fillOpacity: 0.6
 				});
 			});
 		</script>
