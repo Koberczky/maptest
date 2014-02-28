@@ -3,7 +3,7 @@
     <head>
 	<meta charset="utf-8" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" />
+	<link rel="stylesheet" src="css/bootstrap.min.css" />
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<link href="http://developers.google.com/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
@@ -34,14 +34,14 @@
 						position: 'TOP_LEFT'
 					},
 				panControl : false,
-				streetViewControl : true,
+				streetViewControl : false,
 				mapTypeControl: true,
 				overviewMapControl: true
 				});
 				map.drawOverlay({
 					lat: 38.893638,
 					lng: -89.408745,
-					content: '<div class="overlay">Greenville College<div class="overlay_arrow above"></div></div>'
+					content: '<div class="overlay"><font size="6">Greenville College</font><div class="overlay_arrow above"></div></div>'
 				});
 				polygon = map.drawPolygon({
 					paths: path, // pre-defined polygon shape
